@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Organizador de Tareas Académicas</title>
+  <link rel="stylesheet" href="/estatico/estilos.css">
+</head>
+<body>
+  <header>
+    <h1>Organizador de Tareas Académicas</h1>
+  </header>
+
+  <main id="contenido">
+    <noscript>Esta aplicación necesita JavaScript para funcionar.</noscript>
+
+    <p id="mensajes" class="mensajes" role="status" aria-live="polite"></p>
+
+    <section aria-labelledby="titulo-materias">
+      <h2 id="titulo-materias">Materias</h2>
+
+      <form id="form-materia" novalidate>
+        <input type="hidden" id="materia-id">
+
+        <div class="campo">
+          <label for="materia-nombre">Nombre de la materia</label>
+          <input type="text" id="materia-nombre" maxlength="50" required
+                 autocomplete="off" aria-describedby="error-materia-nombre">
+          <p id="error-materia-nombre" class="error"></p>
+        </div>
+
+        <fieldset id="materia-color" class="campo" aria-describedby="error-materia-color">
+          <legend>Color</legend>
+          <div id="opciones-color" class="opciones-color"></div>
+          <p id="error-materia-color" class="error"></p>
+        </fieldset>
+
+        <div class="acciones">
+          <button type="submit" id="guardar-materia">Guardar materia</button>
+          <button type="button" id="cancelar-materia" class="secundario" hidden>Cancelar</button>
+        </div>
+      </form>
+
+      <p id="vacio-materias" class="vacio" hidden>
+        Aún no tienes materias. Registra la primera materia para empezar.
+      </p>
+      <ul id="lista-materias" class="lista"></ul>
+    </section>
+
+    <section aria-labelledby="titulo-tareas">
+      <h2 id="titulo-tareas">Tareas</h2>
+
+      <p id="aviso-sin-materias" class="aviso" hidden>
+        Primero registra una materia para poder crear tareas.
+      </p>
+
+      <form id="form-tarea" novalidate>
+        <input type="hidden" id="tarea-id">
+
+        <div class="campo">
+          <label for="tarea-titulo">Título</label>
+          <input type="text" id="tarea-titulo" maxlength="100" required
+                 autocomplete="off" aria-describedby="error-tarea-titulo">
+          <p id="error-tarea-titulo" class="error"></p>
+        </div>
+
+        <div class="campo">
+          <label for="tarea-descripcion">Descripción (opcional)</label>
+          <textarea id="tarea-descripcion" rows="3" maxlength="500"
+                    aria-describedby="error-tarea-descripcion"></textarea>
+          <p id="error-tarea-descripcion" class="error"></p>
+        </div>
+
+        <div class="campo-doble" role="group" aria-labelledby="etiqueta-entrega"
+             aria-describedby="error-tarea-fecha_entrega">
+          <span id="etiqueta-entrega" class="etiqueta-grupo">Fecha de entrega</span>
+          <div class="campo">
+            <label for="tarea-fecha">Fecha</label>
+            <input type="date" id="tarea-fecha" required>
+          </div>
+          <div class="campo">
+            <label for="tarea-hora">Hora</label>
+            <input type="time" id="tarea-hora" value="23:59" required>
+          </div>
+          <p id="error-tarea-fecha_entrega" class="error"></p>
+        </div>
+
+        <div class="campo">
+          <label for="tarea-materia">Materia</label>
+          <select id="tarea-materia" required aria-describedby="error-tarea-materia_id"></select>
+          <p id="error-tarea-materia_id" class="error"></p>
+        </div>
+
+        <div class="acciones">
+          <button type="submit" id="guardar-tarea">Guardar tarea</button>
+          <button type="button" id="cancelar-tarea" class="secundario" hidden>Cancelar</button>
+        </div>
+      </form>
+
+      <p id="vacio-tareas" class="vacio" hidden>
+        Aún no tienes tareas. Crea la primera tarea con el formulario de arriba.
+      </p>
+      <ul id="lista-tareas" class="lista"></ul>
+    </section>
+  </main>
+
+  <dialog id="dialogo" aria-labelledby="dialogo-titulo">
+    <h2 id="dialogo-titulo">Confirmar eliminación</h2>
+    <p id="dialogo-texto"></p>
+    <div class="acciones">
+      <button type="button" id="dialogo-cancelar" class="secundario">Cancelar</button>
+      <button type="button" id="dialogo-confirmar" class="peligro">Eliminar</button>
+    </div>
+  </dialog>
+
+  <script type="module" src="/estatico/app.js"></script>
+</body>
+</html>
