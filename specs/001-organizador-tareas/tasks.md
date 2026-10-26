@@ -114,7 +114,7 @@ Proyecto único en la raíz del repositorio (ver "Estructura del Proyecto" en el
 
 ### Pruebas de la Historia 3 (escribir primero; deben FALLAR antes de implementar) ⚠️
 
-- [ ] T032 [P] [US3] Escribir `tests/integration/test_tareas_completar.py`: `PATCH /api/tareas/{id}/completada` con `true` devuelve `200` con `plazo` igual a `ninguno` para una tarea vencida; con `false` recupera `vencida`; `404` si no existe; `422` si `completada` no es booleano (FR-011, FR-012)
+- [X] T032 [P] [US3] Escribir `tests/integration/test_tareas_completar.py`: `PATCH /api/tareas/{id}/completada` con `true` devuelve `200` con `plazo` igual a `ninguno` para una tarea vencida; con `false` recupera `vencida`; `404` si no existe; `422` si `completada` no es booleano (FR-011, FR-012)
 - [ ] T033 [P] [US3] Escribir `tests/e2e/test_completar.py`: marcar una tarea vencida como completada la distingue visualmente y quita "Vencida"; desmarcarla la devuelve a pendiente con su marca
 
 ### Implementación de la Historia 3
