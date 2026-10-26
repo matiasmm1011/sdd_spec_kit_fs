@@ -345,6 +345,22 @@ select:disabled {
   background: var(--color-urgente);
 }
 
+/* --- Barra de filtros ------------------------------------------------------ */
+
+/* En pantallas pequeñas los filtros se apilan; desde 48rem van en una sola fila. */
+.filtros {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.filtros h3 {
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+.filtros .acciones button {
+  width: 100%;
+}
+
 /* --- Tareas completadas ---------------------------------------------------- */
 
 /* app.js añade al <li> la clase .tarea-completada, una etiqueta .etiqueta-completada con
@@ -423,6 +439,19 @@ dialog h2 {
 
   .opciones-color {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .filtros {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+    align-items: end;
+  }
+
+  .filtros h3 {
+    grid-column: 1 / -1;
+  }
+
+  .filtros .acciones button {
+    width: auto;
   }
 
   .lista li {
