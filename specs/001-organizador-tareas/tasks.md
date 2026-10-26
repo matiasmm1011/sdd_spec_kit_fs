@@ -122,7 +122,7 @@ Proyecto único en la raíz del repositorio (ver "Estructura del Proyecto" en el
 - [ ] T034 [US3] Añadir el modelo de entrada `{"completada": bool}` (estricto, sin convertir otros tipos) en `app/esquemas.py`
 - [ ] T035 [US3] Implementar `PATCH /api/tareas/{id}/completada` en `app/rutas_tareas.py` (depende de T034), devolviendo la tarea con `plazo` recalculado
 - [ ] T036 [US3] Actualizar `app/estatico/app.js`: control para marcar/desmarcar cada tarea con etiqueta accesible y estado expresado con `aria-pressed`, y refresco del listado
-- [ ] T037 [P] [US3] Añadir a `app/estatico/estilos.css` el estilo distintivo de tareas completadas (texto tachado más indicador no basado solo en color)
+- [X] T037 [P] [US3] Añadir a `app/estatico/estilos.css` el estilo distintivo de tareas completadas (texto tachado más indicador no basado solo en color)
 
 **Punto de control**: Las Historias 1, 2 y 3 funcionan
 

@@ -11,6 +11,7 @@
   --color-error: #b91c1c;
   --color-vencida: #b91c1c;
   --color-vencida-fondo: #fef2f2;
+  --color-completada: #15803d;
   --color-urgente: #b45309;
   --color-urgente-fondo: #fffbeb;
   --color-primario: #1d4ed8;
@@ -342,6 +343,47 @@ select:disabled {
 
 .etiqueta-urgente {
   background: var(--color-urgente);
+}
+
+/* --- Tareas completadas ---------------------------------------------------- */
+
+/* app.js añade al <li> la clase .tarea-completada, una etiqueta .etiqueta-completada con
+   el texto "Completada" y un botón de alternar con aria-pressed. Se distingue por el
+   tachado, el fondo atenuado y la marca ✓ (no depende solo del color). */
+.lista li.tarea-completada {
+  background: var(--color-superficie);
+  border-style: dashed;
+}
+
+.tarea-completada strong,
+.tarea-completada > p {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+
+.etiqueta-completada {
+  padding: 0.125rem 0.625rem;
+  color: var(--color-completada);
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: var(--color-fondo);
+  border: 2px solid var(--color-completada);
+  border-radius: 0.25rem;
+}
+
+.etiqueta-completada::before {
+  content: "✓ ";
+}
+
+/* Botón de marcar/desmarcar: el estado pulsado se ve por el relleno y la marca. */
+button[aria-pressed="true"] {
+  color: #ffffff;
+  background: var(--color-completada);
+  border-color: var(--color-completada);
+}
+
+button[aria-pressed="true"]::before {
+  content: "✓ ";
 }
 
 .vacio,
