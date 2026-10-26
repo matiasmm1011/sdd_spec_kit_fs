@@ -153,6 +153,12 @@ function Obtener-Estado($datos, $hechas, [string]$id) {
 
 function Resolver-Persona($datos) {
     if ($Persona) {
+        # -Persona puede ser un alias de git (usuario o correo) o parte del nombre.
+        foreach ($p in $datos.Personas) {
+            foreach ($a in @($config.alias.$($p.Nombre))) {
+                if ($a -and $a -ieq $Persona) { return $p }
+            }
+        }
         $buscada = Normalizar $Persona
         $coinciden = @($datos.Personas | Where-Object { (Normalizar $_.Nombre).Contains($buscada) })
         if ($coinciden.Count -eq 1) { return $coinciden[0] }
