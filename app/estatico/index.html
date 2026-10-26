@@ -97,8 +97,35 @@
         </div>
       </form>
 
+      <form id="form-filtros" class="filtros" aria-labelledby="titulo-filtros">
+        <h3 id="titulo-filtros">Filtrar tareas</h3>
+
+        <div class="campo">
+          <label for="filtro-materia">Materia</label>
+          <select id="filtro-materia">
+            <option value="">Todas</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="filtro-estado">Estado</label>
+          <select id="filtro-estado">
+            <option value="">Todos</option>
+            <option value="pendiente">Pendientes</option>
+            <option value="completada">Completadas</option>
+          </select>
+        </div>
+
+        <div class="acciones">
+          <button type="button" id="quitar-filtros" class="secundario">Quitar filtros</button>
+        </div>
+      </form>
+
       <p id="vacio-tareas" class="vacio" hidden>
         Aún no tienes tareas. Crea la primera tarea con el formulario de arriba.
+      </p>
+      <p id="sin-resultados" class="vacio" role="status" hidden>
+        No hay tareas con esos criterios.
       </p>
       <ul id="lista-tareas" class="lista"></ul>
     </section>

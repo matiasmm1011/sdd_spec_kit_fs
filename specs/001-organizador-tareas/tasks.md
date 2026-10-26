@@ -142,7 +142,7 @@ Proyecto único en la raíz del repositorio (ver "Estructura del Proyecto" en el
 ### Implementación de la Historia 4
 
 - [ ] T040 [US4] Añadir los parámetros de consulta `materia_id` y `estado` (`pendiente` o `completada`) al `GET /api/tareas` en `app/rutas_tareas.py`
-- [ ] T041 [P] [US4] Añadir a `app/estatico/index.html` los controles de filtro: selector de materia con la opción "Todas", selector de estado con etiquetas asociadas y botón "Quitar filtros"
+- [X] T041 [P] [US4] Añadir a `app/estatico/index.html` los controles de filtro: selector de materia con la opción "Todas", selector de estado con etiquetas asociadas y botón "Quitar filtros"
 - [ ] T042 [US4] Implementar en `app/estatico/app.js` (depende de T041) la aplicación y el quitado de filtros, el envío de los parámetros a la API y el mensaje de resultados vacíos
 - [ ] T043 [P] [US4] Añadir a `app/estatico/estilos.css` los estilos de la barra de filtros, adaptables a pantallas de 360 px
 
