@@ -9,6 +9,10 @@
   --color-borde: #cbd5e1;
   --color-borde-fuerte: #64748b;
   --color-error: #b91c1c;
+  --color-vencida: #b91c1c;
+  --color-vencida-fondo: #fef2f2;
+  --color-urgente: #b45309;
+  --color-urgente-fondo: #fffbeb;
   --color-primario: #1d4ed8;
   --color-foco: #b45309;
   --espacio: 1rem;
@@ -301,6 +305,43 @@ select:disabled {
   font-size: 0.9rem;
   font-weight: 600;
   border-radius: 999px;
+}
+
+/* --- Plazo de las tareas (vencida / urgente) ----------------------------- */
+
+/* El aviso nunca depende solo del color: además del borde y el fondo, cada tarea
+   lleva una etiqueta de texto ("Vencida" o "Urgente") con la clase .etiqueta-plazo
+   y su variante. app.js añade al <li> la clase .tarea-vencida o .tarea-urgente. */
+.lista li.tarea-vencida {
+  background: var(--color-vencida-fondo);
+  border-color: var(--color-vencida);
+  border-left-width: 6px;
+  padding-left: calc(var(--espacio) - 5px); /* compensa el borde más grueso */
+}
+
+.lista li.tarea-urgente {
+  background: var(--color-urgente-fondo);
+  border-color: var(--color-urgente);
+  border-left-width: 6px;
+  padding-left: calc(var(--espacio) - 5px);
+}
+
+.etiqueta-plazo {
+  padding: 0.125rem 0.625rem;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-radius: 0.25rem;
+}
+
+.etiqueta-vencida {
+  background: var(--color-vencida);
+}
+
+.etiqueta-urgente {
+  background: var(--color-urgente);
 }
 
 .vacio,

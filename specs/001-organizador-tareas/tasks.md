@@ -100,7 +100,7 @@ Proyecto único en la raíz del repositorio (ver "Estructura del Proyecto" en el
 - [ ] T028 [US2] Añadir `plazo` (`vencida`, `urgente` o `ninguno`) al modelo de salida de tarea en `app/esquemas.py` (depende de T027)
 - [ ] T029 [US2] Actualizar `app/rutas_tareas.py` (depende de T028): `GET` con `ORDER BY fecha_entrega ASC, id ASC` y cálculo de `plazo` con la dependencia `obtener_ahora` en todas las respuestas que devuelven una tarea
 - [ ] T030 [US2] Actualizar `app/estatico/app.js`: mostrar cada tarea con título, fecha local formateada, estado, nombre y color de su materia y una etiqueta de texto "Vencida" o "Urgente" (no solo color); volver a pedir el listado cada 60 segundos y al recuperar el foco de la pestaña (`visibilitychange`)
-- [ ] T031 [P] [US2] Añadir a `app/estatico/estilos.css` los estilos de tarea vencida y urgente (etiqueta de texto más color y borde) con contraste suficiente
+- [X] T031 [P] [US2] Añadir a `app/estatico/estilos.css` los estilos de tarea vencida y urgente (etiqueta de texto más color y borde) con contraste suficiente
 
 **Punto de control**: Las Historias 1 y 2 funcionan; el listado marca vencidas y urgentes
 
