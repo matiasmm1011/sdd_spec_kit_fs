@@ -91,7 +91,7 @@ Proyecto único en la raíz del repositorio (ver "Estructura del Proyecto" en el
 ### Pruebas de la Historia 2 (escribir primero; deben FALLAR antes de implementar) ⚠️
 
 - [X] T024 [P] [US2] Escribir `tests/unit/test_plazos.py`: tarea completada → `ninguno`; fecha igual a `ahora` → `vencida`; fecha anterior → `vencida`; `ahora` + 1 segundo → `urgente`; exactamente `ahora` + 48 horas → `urgente`; `ahora` + 48 horas + 1 segundo → `ninguno`; una tarea nunca es vencida y urgente a la vez (FR-009, FR-010, FR-012)
-- [ ] T025 [P] [US2] Escribir `tests/integration/test_tareas_listado.py` con el reloj simulado: el `GET /api/tareas` devuelve las tareas ordenadas por `fecha_entrega` ascendente con desempate por `id`; cada objeto trae `plazo`; avanzar el reloj cambia el `plazo` sin modificar los datos guardados (FR-020); `POST` y `PUT` también devuelven `plazo` (FR-007, FR-009, FR-010, FR-020)
+- [X] T025 [P] [US2] Escribir `tests/integration/test_tareas_listado.py` con el reloj simulado: el `GET /api/tareas` devuelve las tareas ordenadas por `fecha_entrega` ascendente con desempate por `id`; cada objeto trae `plazo`; avanzar el reloj cambia el `plazo` sin modificar los datos guardados (FR-020); `POST` y `PUT` también devuelven `plazo` (FR-007, FR-009, FR-010, FR-020)
 - [ ] T026 [P] [US2] Escribir `tests/e2e/test_listado.py`: tres tareas (pasada, dentro de 24 horas y dentro de 10 días) aparecen en ese orden; la primera muestra la etiqueta de texto "Vencida", la segunda "Urgente" y la tercera ninguna; cada tarea muestra nombre y color de su materia (FR-008)
 
 ### Implementación de la Historia 2
